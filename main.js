@@ -136,7 +136,7 @@ canvas.addEventListener('mousedown', function(e) {
 
     if(e.button == 2) { //right click
         var temp = canvasPositionToGridIndex(x+displayXStart*displayZoomRatio, y+displayYStart*displayZoomRatio);
-        if(temp == selectedId) {
+        if(temp == selectedId && selected) {
             selected = false;
         }else{
             selected = true;
