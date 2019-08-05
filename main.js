@@ -135,8 +135,13 @@ canvas.addEventListener('mousedown', function(e) {
     }
 
     if(e.button == 2) { //right click
-        selected = true;
-        selectedId = canvasPositionToGridIndex(x+displayXStart*displayZoomRatio, y+displayYStart*displayZoomRatio);
+        var temp = canvasPositionToGridIndex(x+displayXStart*displayZoomRatio, y+displayYStart*displayZoomRatio);
+        if(temp == selectedId) {
+            selected = false;
+        }else{
+            selected = true;
+            selectedId = temp;
+        }
         redraw();
     }
 });
